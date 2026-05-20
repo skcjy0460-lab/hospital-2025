@@ -704,7 +704,7 @@ with tab3:
             pivot['합계'] = pivot.sum(axis=1)
             pivot = pivot.sort_values('합계', ascending=False)
             fmt = (lambda x: f"{x:,.0f}") if doc_metric == '금액' else (lambda x: f"{x:.1f}")
-            st.dataframe(pivot.applymap(fmt), use_container_width=True)
+            st.dataframe(pivot.style.format(fmt), use_container_width=True)
 
 
 # ── TAB 4 ──────────────────────────────────
